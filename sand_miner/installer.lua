@@ -11,9 +11,9 @@ local program_name = "Dog"
 
 -- #########################################
 
-local RAW_URL = 
-  "https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/"
-local PASTE_URL = 
+local RAW_URL =
+  "https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/sand_miner"
+local PASTE_URL =
   "https://pastebin.com/raw/"
 local p_dir = ... or shell.dir()
 

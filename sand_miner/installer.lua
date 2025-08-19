@@ -1,8 +1,8 @@
 --- Simple program to be used as an installer script. Copy to repos and insert what is needed.
 
 local to_get = {
-  "extern:dog.lua:",
-  "extern:lib/turtle_aid.lua:https://raw.githubusercontent.com/Fatboychummy-CC/Dog/refresh/lib/turtle_aid.lua",
+  "extern:dog.lua:https://raw.githubusercontent.com/Kitzukii/CC-Scripts/refs/heads/main/sand_miner/dog.lua",
+  "extern:lib/turtle_aid.lua:https://raw.githubusercontent.com/Kitzukii/CC-Scripts/refs/heads/main/sand_miner/turtle_aid.lua",
   "lib/file_helper.lua:file_helper.lua",
   "lib/logging.lua:logging.lua",
   "lib/simple_argparse.lua:simple_argparse.lua",
@@ -11,8 +11,10 @@ local program_name = "Dog"
 
 -- #########################################
 
-local RAW_URL = "https://raw.githubusercontent.com/Fatboychummy-CC/Libraries/main/"
-local PASTE_URL = "https://pastebin.com/raw/"
+local RAW_URL = 
+  "https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/"
+local PASTE_URL = 
+  "https://pastebin.com/raw/"
 local p_dir = ... or shell.dir()
 
 local function download_file(url, filename)

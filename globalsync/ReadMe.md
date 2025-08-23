@@ -70,15 +70,17 @@ end
 Sets a variable and syncs it across the network.
 Supports namespaces
 ```lua
-GlobalSync.set("A.B", 80)
+GlobalSync.set("A.B", ":3")
 ```
 
 `GlobalSync.get(key)`
 
 Retrieves a variable
 ```lua
-GlobalSync.get("Player.health")
+-- In this instance, it returns ":3".
+GlobalSync.get("A.B")
 ```
+
 
 `GlobalSync.onUpdate(callback)`
 

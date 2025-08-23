@@ -66,6 +66,7 @@ end
 `false` for client
 
 `GlobalSync.set(key, value)`
+
 Sets a variable and syncs it across the network.
 Supports namespaces
 ```lua

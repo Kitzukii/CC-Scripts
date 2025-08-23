@@ -2,13 +2,9 @@
 
 A lightweight API for syncing global variables between multiple **CC:Tweaked** computers over **WIRED MODEMS**.
 
----
-
 ## NOTICE
 
 This was originally made for a submarine project I had, and I'm not planning on updating it unless it breaks or has a problem. Please use github issues since I don't have a discord post.
-
----
 
 ## Features
 - **Persistent Variables** – Automatically saved in `/persistent_variables/globals.data`
@@ -17,22 +13,16 @@ This was originally made for a submarine project I had, and I'm not planning on 
 - **Event Driven** – Integrates into your main loop using `os.pullEvent()`
 - **Automatic Sync on Startup** – Clients always request the latest values immediately
 
----
-
 ## Notes
 
 All computers must use the same channel (CHANNEL_MAIN = 1 by default).
 Works only with wired modems.
 Multiple clients supported simultaneously.
 
----
-
 ## Installation
 1. Save `globalsync.lua` in the same directory as your scripts.
 2. Ensure all computers are connected via **wired modem**.
 3. Require and initialize in your Lua program.
-
----
 
 ## Usage
 
@@ -71,21 +61,19 @@ end
 `GlobalSync.init(isServer)`
 isServer = `true` for server, `false` for client.
 
----
-
 `GlobalSync.set(key, value)`
 Sets a variable and syncs it across the network.
 Supports namespaces
 ```lua
 GlobalSync.set("A.B", 80)
 ```
----
+
 `GlobalSync.get(key)`
 Retrieves a variable
 ```lua
 GlobalSync.get("Player.health")
 ```
----
+
 `GlobalSync.onUpdate(callback)`
 Registers a function to run whenever a variable changes
 ```lua
@@ -93,7 +81,7 @@ GlobalSync.onUpdate(function(key, value)
     print(key .. " updated to " .. tostring(value))
 end)
 ```
----
+
 `GlobalSync.handleEvent(...)`
 Handles incoming modem messages.
 Call inside your event loop.

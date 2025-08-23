@@ -48,5 +48,36 @@ while true do
     local e, p1, p2, p3, p4, p5 = os.pullEvent()
     GlobalSync.handleEvent(e, p1, p2, p3, p4, p5)
 end
+```
 
+## All functions
 
+`GlobalSync.init(isServer)`
+> isServer = `true` for server, `false` for client.
+
+---
+
+`GlobalSync.set(key, value)`
+Sets a variable and syncs it across the network.
+Supports namespaces:
+```lua
+GlobalSync.set("A.B", 80)
+```
+---
+`GlobalSync.get(key)`
+Retrieves a variable:
+```lua
+GlobalSync.get("Player.health")
+```
+---
+`GlobalSync.onUpdate(callback)`
+Registers a function to run whenever a variable changes:
+```lua
+GlobalSync.onUpdate(function(key, value)
+    print(key .. " updated to " .. tostring(value))
+end)
+```
+---
+`GlobalSync.handleEvent(...)`
+Handles incoming modem messages.
+Call inside your event loop.

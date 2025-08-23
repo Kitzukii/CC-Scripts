@@ -10,7 +10,7 @@ local listeners = {}
 local saveDir = "/persistent_variables"
 local saveFile = saveDir .. "/globals.data"
 
--- Utility: Deep set/get for namespaces like "balast.current" or "balast.goal"
+-- Utility: Deep set/get for namespaces like "Player.health"
 local function deepSet(tbl, path, value)
     local parts = {}
     for part in string.gmatch(path, "[^.]+") do table.insert(parts, part) end
@@ -53,7 +53,14 @@ function GlobalSync.init(server)
     isServer = server or false
     modem.open(CHANNEL_MAIN)
     modem.open(replyChannel)
-    if isServer then loadGlobals() end
+    if isServer then
+        loadGlobals()
+    else
+        -- Auto request current state from server
+        modem.transmit(CHANNEL_MAIN, replyChannel, textutils.serialize({
+            type = "request"
+        }))
+    end
 end
 
 -- Set a value and sync

@@ -3,7 +3,7 @@
 local to_get = {
   "extern:dog.lua:https://raw.githubusercontent.com/Kitzukii/CC-Scripts/refs/heads/main/sand_miner/dog.lua",
   "extern:lib/turtle_aid.lua:https://raw.githubusercontent.com/Kitzukii/CC-Scripts/refs/heads/main/sand_miner/turtle_aid.lua",
-  "lib/file_helper.lua:file_helper.lua",
+  "lib/file_helper.lua:https://raw.githubusercontent.com/Kitzukii/CC-Scripts/refs/heads/main/sand_miner/file_helper.lua",
   "lib/logging.lua:logging.lua",
   "lib/simple_argparse.lua:simple_argparse.lua",
 }

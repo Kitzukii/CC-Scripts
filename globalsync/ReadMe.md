@@ -2,6 +2,14 @@
 
 A lightweight API for syncing global variables between multiple **CC:Tweaked** computers over **WIRED MODEMS**.
 
+---
+
+## NOTICE
+
+This was originally made for a submarine project I had, and I'm not planning on updating it unless it breaks or has a problem. Please use github issues since I don't have a discord post.
+
+---
+
 ## Features
 - **Persistent Variables** – Automatically saved in `/persistent_variables/globals.data`
 - **Namespace Support** – Store values like `Game.Settings.Volume`

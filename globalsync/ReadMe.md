@@ -59,7 +59,11 @@ end
 ## All functions
 
 `GlobalSync.init(isServer)`
-isServer = `true` for server, `false` for client.
+
+`isServer`:
+
+`true` for server
+`false` for client
 
 `GlobalSync.set(key, value)`
 Sets a variable and syncs it across the network.
@@ -69,12 +73,14 @@ GlobalSync.set("A.B", 80)
 ```
 
 `GlobalSync.get(key)`
+
 Retrieves a variable
 ```lua
 GlobalSync.get("Player.health")
 ```
 
 `GlobalSync.onUpdate(callback)`
+
 Registers a function to run whenever a variable changes
 ```lua
 GlobalSync.onUpdate(function(key, value)

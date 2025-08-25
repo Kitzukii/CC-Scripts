@@ -61,16 +61,14 @@ end
 `GlobalSync.init(isServer)`
 
 `isServer`:
-
-`true` for server
-`false` for client
+`true` for server, `false` for client
 
 `GlobalSync.set(key, value)`
 
 Sets a variable and syncs it across the network.
 Supports namespaces
 ```lua
-GlobalSync.set("A.B", ":3")
+GlobalSync.set("colon.three", ":3")
 ```
 
 `GlobalSync.get(key)`
@@ -78,7 +76,7 @@ GlobalSync.set("A.B", ":3")
 Retrieves a variable
 ```lua
 -- In this instance, it returns ":3".
-GlobalSync.get("A.B")
+GlobalSync.get("colon.three")
 ```
 
 
@@ -92,8 +90,19 @@ end)
 ```
 
 `GlobalSync.handleEvent(...)`
+
 Handles incoming modem messages.
 Call inside your event loop.
+
+### deepSet and deepGet
+
+`deepSet(table, keyPath, value)`
+
+Sets a value deeply in a table using a dot-separated path.
+```lua
+deepSet(globals, "Player.stats.health", 100)
+-- Equivalent to: globals.Player.stats.health = 100
+```
 
 ## Data Persistence
 

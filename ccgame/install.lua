@@ -1,5 +1,5 @@
 local baseURL = 
-    "https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/game_lib/default_engine/"
+    "https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/ccgame/engine/"
 local files = {
     "core.lua",
     "physics.lua",
@@ -17,6 +17,8 @@ local httpGet = http.get
 local fsExists = fs.exists
 local fsMakeDir = fs.makeDir
 local fsOpen = fs.open
+
+term.setTextColor(colors.green)
 
 local function downloadFile(path, dest)
     print(("Downloading %s → %s"):format(path, dest))
@@ -40,24 +42,25 @@ local function ensureDir(d)
     end
 end
 
-print("Installing default_engine...")
+print("Installing CCGame.")
 
-ensureDir("lib_engine")
-ensureDir(fs.combine("lib_engine", pluginDir))
+ensureDir("ccgame")
+ensureDir(fs.combine("ccgame", pluginDir))
 
 -- Download core files
 for _, fname in ipairs(files) do
-    local dest = fs.combine("lib_engine", fname)
+    local dest = fs.combine("ccgame", fname)
     downloadFile(fname, dest)
 end
 
 -- Download plugins
 for _, pf in ipairs(plugins) do
-    local dest = fs.combine("lib_engine", pluginDir, pf)
+    local dest = fs.combine("ccgame", pluginDir, pf)
     downloadFile(fs.combine(pluginDir, pf), dest)
 end
 
+term.setTextColor(colors.white)
 print("Installation completed successfully!")
 print("To use it:")
-print("  local engine = require('lib_engine.core')")
+print("  local engine = require('ccgame.core')")
 print("  local scr = engine.newScreen('monitor_name')")

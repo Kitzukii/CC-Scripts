@@ -3,14 +3,13 @@ local baseURL =
 local files = {
     "core.lua",
     "physics.lua",
-    "ui.lua",
-    -- "docs.md"
-    -- Don't really need the docs. Just check the Github.
+    "ui.lua"
 }
 
 local pluginDir = "plugins"
 local plugins = {
-    "example.lua"
+    -- "example.lua"
+    -- Just here to help me remember how to add a default plugin.
 }
 
 local httpGet = http.get

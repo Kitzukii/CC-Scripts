@@ -13,13 +13,14 @@ A modular engine for **ComputerCraft: Tweaked** monitors with:
 ---
 
 ## Installation
-1. Copy the `lib_engine` folder to your computer or turtle.
-2. Place your script alongside it (or adjust `require` paths).
-3. `core.lua` will auto-load `physics.lua`, `ui.lua`, and any plugins in `plugins/`.
+Pretty simple.
+```pdf
+wget run https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/ccgame/install.lua
+```
 
 ```
 /your_program.lua
-/lib_engine/
+/ccgame/
   core.lua
   physics.lua
   ui.lua
@@ -30,7 +31,7 @@ A modular engine for **ComputerCraft: Tweaked** monitors with:
 
 ## Quick Start
 ```lua
-local engine = require("lib_engine.core")
+local engine = require("ccgame.core")
 
 -- attach to a monitor by name or wrapped peripheral
 local scr = engine.newScreen("top")  -- e.g. monitor on top
@@ -91,7 +92,7 @@ obj = screen:addObject(x, y, char)
 
 **Start / Stop**
 ```lua
-screen:start({ plugins = true, plugins_dir = "lib_engine/plugins" })
+screen:start({ plugins = true, plugins_dir = "ccgame/plugins" })
 screen:stop()
 ```
 

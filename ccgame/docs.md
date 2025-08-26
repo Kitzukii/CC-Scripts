@@ -17,16 +17,14 @@ Pretty simple.
 ```pdf
 wget run https://raw.githubusercontent.com/Kitzukii/CC-Scripts/main/ccgame/install.lua
 ```
-
+There should be a folder called "ccgame" now, if you run "dir".
 ```
-/your_program.lua
-/ccgame/
+ccgame/
   core.lua
   physics.lua
   ui.lua
   docs.md
-  /plugins/
-    example.lua
+  plugins/
 ```
 
 ## Quick Start

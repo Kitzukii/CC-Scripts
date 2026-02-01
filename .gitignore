@@ -1,3 +1,4 @@
 .anchor.keras
 .lumenModel.keras
 .Lumen/iQT.py
+Lumen/server/*
